@@ -195,4 +195,95 @@ public class Basic {
         }
     }
 
+    // #31
+    static class WhetherJava {
+        public static void main(String[] args) {
+            System.out.println("Java Version is: " + System.getProperty("java.version"));
+            System.out.println("Java Runtime Version is: " + System.getProperty("java.runtime.version"));
+            System.out.println("Java Home is: " + System.getProperty("java.home"));
+            System.out.println("Java Vendor is: " + System.getProperty("java.vendor"));
+            System.out.println("Java Vendor URL is: " + System.getProperty("java.vendor.url"));
+            System.out.println("Java Class Path is: " + System.getProperty("java.class.path"));
+        }
+    }
+
+    // #32
+    static class CompareNumbers {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Input first number: ");
+            int firstNumber = scanner.nextInt();
+
+            System.out.print("Input second number: ");
+            int secondNumber = scanner.nextInt();
+
+//            if (firstNumber == secondNumber) {
+//                System.out.println(firstNumber + "==" + secondNumber);
+//            } else if (firstNumber < secondNumber) {
+//                System.out.println(firstNumber + "<" + secondNumber);
+//            } else if (firstNumber <= secondNumber) {
+//                System.out.println(firstNumber + "<=" + secondNumber);
+//            } else {
+//                System.out.println(firstNumber + "!=" + secondNumber);
+//            }
+
+            if (firstNumber == secondNumber) {
+                System.out.println(firstNumber + " == " + secondNumber);
+            } else {
+                System.out.println(firstNumber + " != " + secondNumber);
+                if (firstNumber < secondNumber) {
+                    System.out.println(firstNumber + " < " + secondNumber);
+                }
+                if (firstNumber <= secondNumber) {
+                    System.out.println(firstNumber + " <= " + secondNumber);
+                }
+            }
+
+            scanner.close();
+        }
+        // ещё через switch можно
+    }
+
+    // #33
+    static class SumOfDigits {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+//            System.out.println("Input an integer: ");
+//            int integer = scanner.nextInt();
+//            int count = 0;
+//            int originalInteger = integer;
+//
+//            while (integer != 0) {
+//                int digit = integer % 10;
+//                count += digit;
+//                int result = integer / digit;
+//            }
+//
+//            System.out.println("The sume of digits of " + originalInteger + "is: " + result);
+//            scanner.close();
+
+            System.out.print("Input an integer: ");
+            int number = scanner.nextInt();
+
+            int count = 0;
+            int originalNumber = number;
+
+            while (number != 0) {
+                int digit = number % 10;
+                count += digit;
+                number /= 10;
+            }
+
+            System.out.println("The sum of the digits of " + originalNumber + " is: " + count);
+
+            scanner.close();
+        }
+
+    }
+
+    // #34
+
+
 }
+
