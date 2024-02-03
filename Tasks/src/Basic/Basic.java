@@ -128,12 +128,25 @@ public class Basic {
         public static void main(String[] args) {
             double result = 4.0 * (1 - (1.0 / 3) + (1.0 / 5) - (1.0 / 7) + (1.0 / 9) - (1.0 / 11));
 
-            System.out.println("Result of the formula: " + result);
+            double resultTwo = 1.0 / 3;
+            double resultThree = 1 / 3;
+
+            System.out.println("Result of the formula: " + resultThree);
         }
     }
 
     // #11
-    // не понял как сделать
+    static class Circle {
+        public static void main(String[] args) {
+            double radius = 7.5;
+
+            double perimeter = 2 * Math.PI * radius;
+            double area = 3.14 * Math.PI * radius;
+
+            System.out.println("Perimeter is = " + perimeter);
+            System.out.println("Area is = " + area);
+        }
+    }
 
     // #12
     static class AverageCalculator {
@@ -173,7 +186,32 @@ public class Basic {
     }
 
     // #14
-    // ебучий флаг, разберусь как сделать
+    static class AmericanFlag {
+        public static void main(String[] args) {
+            int rows = 9;
+            int columns = 30;
+
+            for (int i = 1; i <= rows; i++) {
+                for (int j = 1; j <= columns; j++) {
+                    if (i % 2 == 0) {
+                        System.out.print(" ");
+                        System.out.print("*");
+                    } else {
+                        System.out.print("*");
+                        System.out.print(" ");
+                    }
+                }
+                System.out.println();
+            }
+
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < columns; j++) {
+                    System.out.print("=");
+                }
+                System.out.println();
+            }
+        }
+    }
 
     // #15
     static class SwapVariables {
@@ -194,6 +232,12 @@ public class Basic {
             System.out.println("num2 = " + num2);
         }
     }
+
+    // #16 skip
+
+    // #17
+
+
 
     // #31
     static class WhetherJava {
