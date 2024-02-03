@@ -117,7 +117,8 @@ public class Basic {
     // #9
     static class ExpressionCalculation {
         public static void main(String[] args) {
-            double result = ((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5));
+//            double result = ((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5));
+            double result = ((25.5 * 3.5 - Math.pow(3.5, 2)) / (40.5 - 4.5));
 
             System.out.println("Result of the expression: " + result);
         }
@@ -235,9 +236,82 @@ public class Basic {
 
     // #16 skip
 
-    // #17
+    // №17
 
+    static class AddBinaryNumbers {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
 
+            System.out.print("Input the first binary: ");
+            String binary1 = scanner.nextLine();
+
+            System.out.print("Input the second binary: ");
+            String binary2 = scanner.nextLine();
+
+            int first = Integer.parseInt(binary1, 2);
+            int second = Integer.parseInt(binary2, 2);
+
+            int sum = first + second;
+
+            String binary = Integer.toBinaryString(sum);
+
+            System.out.println("Sum of two binary numbers: " + binary);
+
+            scanner.close();
+        }
+    }
+
+    // #18
+    static class MultiplyBinaryNumbers {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Input the first binary: ");
+            String binary1 = scanner.nextLine();
+
+            System.out.print("Input the second binary: ");
+            String binary2 = scanner.nextLine();
+
+            int decimal1 = Integer.parseInt(binary1, 2);
+            int decimal2 = Integer.parseInt(binary2, 2);
+
+            int sum = decimal1 * decimal2;
+
+            String binaryProduct = Integer.toBinaryString(sum);
+
+            System.out.println("Sum of two binary numbers: " + binaryProduct);
+
+            scanner.close();
+        }
+    }
+
+    // #19
+    static class ConvertToBinary {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Input a Decimal Number: ");
+            int decimal = scanner.nextInt();
+
+            String binary = Integer.toBinaryString(decimal);
+
+            System.out.println("Binary Number: " + binary);
+        }
+    }
+
+    // #20
+    static class ConvertToHex {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Input the number: ");
+            int bumber = scanner.nextInt();
+
+            String hex = Integer.toHexString(bumber);
+
+            System.out.println("Hex: " + hex.toUpperCase());
+        }
+    }
 
     // #31
     static class WhetherJava {
