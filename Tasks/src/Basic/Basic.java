@@ -313,6 +313,131 @@ public class Basic {
         }
     }
 
+    // #21
+    static class DecimalToOctal {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Input number: ");
+            int number = scanner.nextInt();
+
+            String octalNumber = Integer.toOctalString(number);
+
+            System.out.println("Octal number is: " + octalNumber);
+        }
+    }
+
+    // #22
+    static class BinaryToDecimal {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Input a binary number: ");
+            String binaryNumberString = scanner.next();
+
+            int decimalNumber = 0;
+            int power = 0;
+
+            // Проходимся по строке, начиная с конца
+            for (int i = binaryNumberString.length() - 1; i >= 0; i--) {
+                // Получаем текущий символ (цифру)
+                char digitChar = binaryNumberString.charAt(i);
+                // Преобразуем символ в цифру
+                int digit = Character.getNumericValue(digitChar);
+                // Увеличиваем десятичное число, учитывая текущую цифру и степень двойки
+                decimalNumber += digit * Math.pow(2, power);
+                // Увеличиваем степень двойки для следующего разряда
+                power++;
+            }
+
+            System.out.println("Decimal Number: " + decimalNumber);
+        }
+    }
+
+    // #23
+    static class BinaryToHexadecimal {
+        public static void main(String[] args) {
+            // Объявление массива для хранения шестнадцатеричных цифр, переменных для вычислений и двоичного ввода
+            int[] hex = new int[1000];
+            int i = 1, j = 0, rem, dec = 0, bin;
+
+            // Создание объекта Scanner для чтения ввода от пользователя
+            Scanner in = new Scanner(System.in);
+
+            // Подсказка пользователю ввести двоичное число
+            System.out.print("Input a binary number: ");
+            bin = in.nextInt();
+
+            // Преобразование двоичного числа в десятичное
+            while (bin > 0) {
+                rem = bin % 2;
+                dec = dec + rem * i;
+                i = i * 2;
+                bin = bin / 10;
+            }
+            i = 0;
+
+            // Преобразование десятичного числа в шестнадцатеричное
+            while (dec != 0) {
+                hex[i] = dec % 16;
+                dec = dec / 16;
+                i++;
+            }
+
+            // Отображение шестнадцатеричного значения
+            System.out.print("Шестнадцатеричное значение: ");
+            for (j = i - 1; j >= 0; j--) {
+                if (hex[j] > 9) {
+                    System.out.print((char) (hex[j] + 55));
+                } else {
+                    System.out.print(hex[j]);
+                }
+            }
+            System.out.print("\n");
+        }
+    }
+
+
+    // #24
+    public class BinaryToOctal {
+        public static void main(String[] args) {
+            // Объявление переменных для хранения двоичного и десятичного чисел, остатка, частного,
+            // и массива для восьмеричных цифр
+            int binnum, binnum1, rem, decnum = 0, quot, i = 1, j;
+            int octnum[] = new int[100];
+
+            // Создание объекта Scanner для чтения ввода от пользователя
+            Scanner scan = new Scanner(System.in);
+
+            // Подсказка пользователю ввести двоичное число
+            System.out.print("Input a binary number: ");
+            binnum = scan.nextInt();
+            binnum1 = binnum;
+
+            // Преобразование двоичного числа в десятичное
+            while (binnum > 0) {
+                rem = binnum % 10;
+                decnum = decnum + rem * i;
+                i = i * 2;
+                binnum = binnum / 10;
+            }
+
+            i = 1;
+            quot = decnum;
+
+            // Преобразование десятичного числа в восьмеричное
+            while (quot > 0) {
+                octnum[i++] = quot % 8;
+                quot = quot / 8;
+            }
+
+            // Отображение восьмеричного значения исходного двоичного числа
+            System.out.print("Восьмеричное значение " + binnum1 + " :");
+            for (j = i - 1; j > 0; j--) {
+                System.out.print(octnum[j]);
+            }
+            System.out.print("\n");
+        }
+    }
+
     // #31
     static class WhetherJava {
         public static void main(String[] args) {
