@@ -234,6 +234,24 @@ public class Basic {
         }
     }
 
+    // #15
+    static class Swapping {
+        public static void main(String[] args) {
+            int a, b, temp;
+
+            a = 15;
+            b = 27;
+
+            System.out.println("Before swapping : a, b = " + a + ", " + b);
+
+            temp = a;
+            a = b;
+            b = temp;
+
+            System.out.println("After swapping : a, b = " + a + ", " + b);
+        }
+    }
+
     // #16 skip
 
     // №17
@@ -526,6 +544,158 @@ public class Basic {
     }
 
     // #34
+
+    // #37
+    static class ReverseString {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Input a string: ");
+            String inputString = scanner.nextLine();
+            String reversedString = new StringBuilder(inputString).reverse().toString();
+            System.out.println("Reverse string: " + reversedString);
+        }
+    }
+
+    // #38
+
+    static class CharacterCounter {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Input a string: ");
+            String input = scanner.nextLine();
+
+            int letters = 0, spaces = 0, numbers = 0, others = 0;
+
+            for (int i = 0; i < input.length(); i++) {
+                char ch = input.charAt(i);
+                if (Character.isLetter(ch)) {
+                    letters++;
+                } else if (Character.isDigit(ch)) {
+                    numbers++;
+                } else if (Character.isSpaceChar(ch)) {
+                    spaces++;
+                } else {
+                    others++;
+                }
+            }
+
+            System.out.println("The string is: " + input);
+            System.out.println("letter: " + letters);
+            System.out.println("space: " + spaces);
+            System.out.println("number: " + numbers);
+            System.out.println("other: " + others);
+        }
+    }
+
+    // #41
+    static class AsciiValue {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter a character: ");
+            char character = scanner.next().charAt(0);
+            System.out.println("The ASCII value of " + character + " is: " + character);
+        }
+    }
+
+    // #42
+    static class DisplayPassword {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Input your Password: ");
+            String password = scanner.nextLine();  // Read the user's password
+            System.out.println("Your password was: " + password);
+        }
+    }
+
+    // #44
+    static class SimpleSum {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Input number: ");
+            int n = scanner.nextInt();
+
+            // Вычисляем значения для nn и nnn
+            int nn = n * 10 + n;     // Эквивалентно nn = 11 * n
+            int nnn = n * 100 + nn;  // Эквивалентно nnn = 111 * n
+
+            // Вычисляем и выводим общую сумму
+            int sum = n + nn + nnn;
+            System.out.println(n + " + " + nn + " + " + nnn + " = " + sum);
+        }
+    }
+
+    // #48
+    static class PrintNumbers {
+        public static void main(String[] args) {
+            for (int i = 1; i < 100; i += 2) {  // Увеличивается на 2, шоб пропустить четные числа
+                System.out.println(i);
+            }
+        }
+    }
+
+    // #49
+    static class CheckEvenOdd {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Input a number: ");
+            int number = scanner.nextInt();
+            if (number % 2 == 0) {
+                System.out.println("1");  // четное
+            } else {
+                System.out.println("0");  // не четное
+            }
+        }
+    }
+
+    // #50
+    static class DividedNumbers {
+        public static void main(String[] args) {
+            System.out.println("Деленное 3:");
+            for (int i = 1; i <= 100; i++) {
+                if (i % 3 == 0) {
+                    System.out.print(i + ", ");
+                }
+            }
+            System.out.println("\n\nДеленное 5:");
+            for (int i = 1; i <= 100; i++) {
+                if (i % 5 == 0) {
+                    System.out.print(i + ", ");
+                }
+            }
+            System.out.println("\n\nДеленное 3 и 5:");
+            for (int i = 1; i <= 100; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    System.out.print(i + ", ");
+                }
+            }
+        }
+    }
+
+    // #FizzBuzz
+    public class FizzBuzz {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter a number: ");
+            int n = scanner.nextInt();
+            String[] answer = new String[n];
+
+            for (int i = 1; i <= n; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    answer[i - 1] = "FizzBuzz";
+                } else if (i % 3 == 0) {
+                    answer[i - 1] = "Fizz";
+                } else if (i % 5 == 0) {
+                    answer[i - 1] = "Buzz";
+                } else {
+                    answer[i - 1] = Integer.toString(i);
+                }
+            }
+
+            for (String s : answer) {
+                System.out.print("\"" + s + "\",");
+            }
+        }
+    }
 
 
 }
