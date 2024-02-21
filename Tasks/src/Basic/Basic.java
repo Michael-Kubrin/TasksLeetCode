@@ -672,7 +672,7 @@ public class Basic {
     }
 
     // #FizzBuzz
-    public class FizzBuzz {
+    static class FizzBuzz {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter a number: ");
